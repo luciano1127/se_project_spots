@@ -16,4 +16,4 @@ A social media platfrom for sharing and interacting with images, includes space 
 
 This website is deployed to GitHub Pages.
 
--Deployment link:
+-Deployment link: https://luciano1127.github.io/se_project_spots/
