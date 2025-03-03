@@ -1,4 +1,12 @@
 .content {
-  padding: 0 80px;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
   margin: 0;
+}
+
+@media screen and (max-width: 627px) {
+  .content {
+    padding: 0 16px;
+  }
 }
