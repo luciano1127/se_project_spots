@@ -13,12 +13,14 @@
   border: none;
   background-color: transparent;
   color: #212121;
+  opacity: 40%;
   margin-left: auto;
   padding: 0;
+  cursor: pointer;
 }
 
 .card__like-btn:hover {
-  filter: invert(1) grayscale(100%) brightness(0);
+  opacity: 100%;
 }
 
 .card__content {

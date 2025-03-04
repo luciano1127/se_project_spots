@@ -21,6 +21,7 @@
   max-height: 52px;
   font-weight: 500;
   font-size: 16px;
+  cursor: pointer;
 }
 
 .profile__add-btn:hover {
@@ -32,6 +33,7 @@
   margin-top: auto;
   margin-right: auto;
   border: none;
+  cursor: pointer;
   color: #212121;
   opacity: 70%;
   background: none;
