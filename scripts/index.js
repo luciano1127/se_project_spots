@@ -48,6 +48,24 @@ const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostCaptionInput = newPostModal.querySelector("#card-caption-input");
 const newPostImageInput = newPostModal.querySelector("#card-image-input");
 
+const cardList = document.querySelector(".cards__list");
+
+const cardTemplate = document
+  .querySelector("#card-template")
+  .content.querySelector(".card");
+
+function getCardElement(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardTitleEl = cardElement.querySelector(".card__title");
+  const cardImageEl = cardElement.querySelector(".card__image");
+
+  cardImageEl.src = data.link;
+  cardImageEl.alt = data.name;
+  cardTitleEl.textContent = data.name;
+
+  return cardElement;
+}
+
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
 }
@@ -92,6 +110,6 @@ function handleNewPostSubmit(evt) {
 newPostForm.addEventListener("submit", handleNewPostSubmit);
 
 initialCards.forEach(function (item) {
-  console.log(item.name);
-  console.log(item.link);
+  const card = getCardElement(item);
+  cardList.append(card);
 });
