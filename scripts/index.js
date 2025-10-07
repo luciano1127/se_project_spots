@@ -86,6 +86,7 @@ function getCardElement(data) {
 
   cardImageEl.addEventListener("click", () => {
     previewImageEl.src = data.link;
+    previewImageEl.alt = data.name;
     previewCaptionEl.textContent = data.name;
 
     openModal(previewModal);
@@ -143,6 +144,8 @@ function handleNewPostSubmit(evt) {
 
   const card = getCardElement(inputValues);
   cardList.prepend(card);
+
+  newPostForm.reset();
 
   closeModal(newPostModal);
 }

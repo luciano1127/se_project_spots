@@ -15,7 +15,7 @@
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
-.modal__type_preview {
+.modal_type_preview {
   padding: 0 16px;
 }
 
@@ -53,16 +53,7 @@
   z-index: 2;
 }
 
-/*.modal__close_type_preview {
-  top: 0;
-  right: -52.5px;
-  background-image: url(../images/x-white.svg);
-  background-color: transparent;
-  opacity: 100%;
-  position: absolute;
-} */
-
-.modal__close-btn.modal__close_type_preview {
+.modal__close-btn.modal__close_btn_type_preview {
   top: 0;
   right: -52.5px;
   background: url(../images/x-white.svg) center / 24px 24px no-repeat;
@@ -71,7 +62,7 @@
   z-index: 3;
 }
 
-.modal__close-btn.modal__close_type_preview:hover {
+.modal__close-btn.modal__close_btn_type_preview:hover {
   opacity: 0.4;
 }
 
@@ -191,7 +182,7 @@
 }
 
 @media screen and (max-width: 627px) {
-  .modal__close_type_preview {
+  .modal__close_btn_type_preview {
     top: -48px;
     right: 0;
   }
