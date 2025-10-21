@@ -56,14 +56,9 @@
 .modal__close-btn_type_preview {
   top: 0;
   right: -52.5px;
-  background: url(../images/x-white.svg) center / 24px 24px no-repeat;
+  background: url(../images/x-white.svg) center / 40px 40px no-repeat;
   position: absolute;
-  opacity: 1;
   z-index: 3;
-}
-
-.modal__close-btn_type_preview:hover {
-  opacity: 0.4;
 }
 
 .modal__close-btn:hover {
@@ -159,11 +154,6 @@
 }
 
 @media screen and (max-width: 627px) {
-  .modal__close-btn_type_preview {
-    top: -48px;
-    right: 0;
-  }
-
   .modal__image {
     max-height: none;
   }
@@ -193,5 +183,10 @@
   .modal__close-btn {
     top: 22px;
     right: 12px;
+  }
+
+  .modal__close-btn_type_preview {
+    top: -48px;
+    right: 0;
   }
 }
