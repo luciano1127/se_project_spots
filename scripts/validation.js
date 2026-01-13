@@ -27,7 +27,7 @@ const hasInvalidInput = (inputList) => {
   });
 };
 
-//const hasInvalidInput = (inputList) => {
+const hasInvalidInput = (inputList) => {
 //return inputList.some((input) => {
 //return !input.validity.valid;
 //});
