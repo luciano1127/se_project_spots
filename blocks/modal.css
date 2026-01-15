@@ -143,6 +143,10 @@
   opacity: 80%;
 }
 
+.modal__submit-btn_inactive {
+opacity: 50%;
+}
+
 .modal__image {
   max-width: 80vw;
   max-height: 80vh;

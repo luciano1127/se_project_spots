@@ -1,66 +1,84 @@
-const showInputError = (formElement, inputElement, errorMessage) => {
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__submit-btn",
+  inactiveButtonClass: "modal__submit-btn_inactive",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error"
+};
+
+const showInputError = (formElement, inputElement, errorMessage, config) => {
   const errorMessageID = inputElement.id + "-error";
   const errorMessageElement = formElement.querySelector("#" + errorMessageID);
   errorMessageElement.textContent = errorMessage;
 
-  inputElement.classList.add("modal__input_type_error");
+  inputElement.classList.add(config.inputErrorClass);
 };
 
-const hideInputError = (formElement, inputElement) => {
+const hideInputError = (formElement, inputElement, config) => {
   const errorMessageID = inputElement.id + "-error";
   const errorMessageElement = formElement.querySelector("#" + errorMessageID);
   errorMessageElement.textContent = "";
-  inputElement.classList.remove("modal__input_type_error");
+  inputElement.classList.remove(config.inputErrorClass);
 };
 
-const checkInputValidity = (formElement, inputElement) => {
+const checkInputValidity = (formElement, inputElement, config) => {
   if (!inputElement.validity.valid) {
-    showInputError(formElement, inputElement, inputElement.validationMessage);
+    showInputError(formElement, inputElement, inputElement.validationMessage, config);
   } else {
-    hideInputError(formElement, inputElement);
+    hideInputError(formElement, inputElement, config);
   }
 };
 
-const hasInvalidInput = (inputList) => {
+const hasInvalidInput = (inputList, config) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;
   });
 };
 
-const hasInvalidInput = (inputList) => {
-//return inputList.some((input) => {
-//return !input.validity.valid;
-//});
-//};
-
-const toggleButtonState = (inputElement, buttonElement) => {
-  console.log(hasInvalidInput(inputList));
-  //if (hasInvalidInput(inputList)) {
-  //buttonElement.classList.add("button_inactive");
-  //}; //else {
-  //buttonElement.classList.remove("button_inactive");
-  //}
+const toggleButtonState = (inputList, buttonElement, config) => {
+  if (hasInvalidInput(inputList)) {
+  disableButton(buttonElement, config);
+  } else {
+  ableButton(buttonElement, config);
+  }
 };
 
-const setEventListeners = (formElement) => {
-  const inputList = formElement.querySelectorAll(".modal__input");
-  const buttonElement = formElement.querySelector(".modal__submit-btn");
+const ableButton = (buttonElement, config) => {
+ buttonElement.disabled = false;
+    buttonElement.classList.remove(config.inactiveButtonClass);
+};
 
-  //toggleButtonState(inputList, buttonElement);
+const resetValidation = (formElement, inputList, config) => {
+  inputList.forEach((inputElement) => {
+hideInputError(formElement, inputElement, config);
+});
+};
+
+const disableButton = (buttonElement, config) => {
+  buttonElement.disabled = true;
+  buttonElement.classList.add(config.inactiveButtonClass);
+};
+
+const setEventListeners = (formElement, config) => {
+  const inputList = Array.from(formElement.querySelectorAll(config.inputSelector));
+  const buttonElement = formElement.querySelector(config.submitButtonSelector);
+
+  toggleButtonState(inputList, buttonElement, config);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
-      checkInputValidity(formElement, inputElement);
-      toggleButtonState(inputList, buttonElement);
+      checkInputValidity(formElement, inputElement, config);
+      toggleButtonState(inputList, buttonElement, config);
     });
   });
 };
 
-const enableValidation = () => {
-  const formList = document.querySelectorAll(".modal__form");
+const enableValidation = (config) => {
+  const formList = document.querySelectorAll(config.formSelector);
   formList.forEach((formElement) => {
-    setEventListeners(formElement);
+    setEventListeners(formElement, config);
   });
 };
 
-enableValidation();
+enableValidation(settings);
