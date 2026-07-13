@@ -1,3 +1,6 @@
+import { enableValidation, settings, resetValidation, disableButton } from "../scripts/validation.js";
+// import { settings } from "./validation.js";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -187,4 +190,6 @@ if (event.key === "Escape") {
     }
   }
 }
+
+enableValidation(settings);
 
