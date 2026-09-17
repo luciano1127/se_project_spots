@@ -1,3 +1,5 @@
+console.log("BABEL CONFIG IS LOADING");
+
 const presets = [
   [
     "@babel/preset-env", // The preset you want to use.
@@ -11,8 +13,9 @@ const presets = [
       // Babel uses polyfills from the core-js library
       useBuiltIns: "entry",
       corejs: "^3",
+       modules: "commonjs",
     },
   ],
 ];
 
-module.exports = { presets };
+module.exports = { presets }
