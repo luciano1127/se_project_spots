@@ -163,14 +163,14 @@ editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
   openModal(editProfileModal);
-});
-
-editProfileCloseBtn.addEventListener("click", function () {
   resetValidation(
     editProfileForm,
     [editProfileNameInput, editProfileDescriptionInput],
     settings
   );
+});
+
+editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
 });
 
@@ -224,7 +224,10 @@ setBtnText(editAvatarSubmitBtn, true);
     disableButton(editAvatarSubmitBtn, settings);
     closeModal(editAvatarModal);
   })
-  .catch(console.error);
+  .catch(console.error)
+  .finally(() => {
+    setBtnText(editAvatarSubmitBtn, false);
+  });
 }
 
 editAvatarForm.addEventListener("submit", handleEditAvatarSubmit);
@@ -244,7 +247,10 @@ function handleEditProfileSubmit(evt) {
     disableButton(editProfileSubmitBtn, settings);
     closeModal(editProfileModal);
   })
-  .catch(console.error);
+  .catch(console.error)
+  .finally(() => {
+    setBtnText(editProfileSubmitBtn, false);
+  });
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
@@ -266,7 +272,10 @@ function handleNewPostSubmit(evt) {
     disableButton(newPostSubmitBtn, settings);
     closeModal(newPostModal);
   })
-  .catch(console.error);
+  .catch(console.error)
+  .finally(() => {
+    setBtnText(newPostSubmitBtn, false);
+  });
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
@@ -285,7 +294,10 @@ function handleDeletePostSubmit(evt) {
     selectedCard.remove();
     closeModal(deletePostModal);
   })
-  .catch(console.error);
+  .catch(console.error)
+  .finally(() => {
+    setBtnText(deleteSubmitBtn, false, "Delete", "Deleting...");
+  });
 }
 
 
