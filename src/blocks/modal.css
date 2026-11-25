@@ -53,7 +53,28 @@
   z-index: 2;
 }
 
-.modal__close-btn_type_preview {
+.modal__cancel-btn {
+  max-width: 156px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #212121;
+  color: #212121;
+  padding: 18px 32px;
+  max-width: 156px;
+  max-height: 52px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.modal__cancel-btn:hover {
+ background-color: #212121;
+ color: #ffffff;
+}
+
+.modal__close-btn_type_outside {
   top: 0;
   right: -52.5px;
   background: url(../images/x-white.svg) center / 40px 40px no-repeat;
@@ -72,9 +93,20 @@
   color: #212121;
 }
 
+.modal__title_type_delete {
+  font-size: 24px;
+  text-align: center;
+}
+
 .modal__form {
   display: flex;
   flex-direction: column;
+}
+
+.modal__form_type_delete {
+  flex-direction: row;
+  gap: 20px;
+   justify-content: center;
 }
 
 .modal__input {
@@ -146,6 +178,16 @@
 opacity: 50%;
 }
 
+.modal__submit-btn_type_delete {
+  background-color: #FF6565;
+  color: #212121;
+}
+
+.modal__submit-btn_type_delete:hover {
+ background-color: #FF3333;
+ opacity: 100%;
+}
+
 .modal__image {
   max-width: 80vw;
   max-height: 80vh;
@@ -202,8 +244,20 @@ opacity: 50%;
     right: 12px;
   }
 
-  .modal__close-btn_type_preview {
+  .modal__close-btn_type_outside {
     top: -48px;
     right: 0;
   }
+
+  .modal__form_type_delete {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .modal__submit-btn_type_delete {
+  max-width: 156px;
+}
+
+
 }

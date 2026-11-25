@@ -1,6 +1,6 @@
 # Project 3: Spots
 
-An image sharing site
+An image sharing social media site
 
 ## Description
 
@@ -10,16 +10,11 @@ A social media platfrom for sharing and interacting with images, includes space 
 
 - HTML
 - CSS
+- JS
 - Responsive design
 
 ## Deployment
 
 This website is deployed to GitHub Pages.
 
--Deployment link: https://luciano1127.github.io/se_project_spots/
--Presentation video pt.1: https://drive.google.com/file/d/1FdYdE3RUH4vFs9UmbOzwMet1jnE9ZnFE/view?usp=sharing
--Presentation video pt.2: https://drive.google.com/file/d/12we_fWWSZ4Ich-u8ppiI_o7e5ATBYOOW/view?usp=sharing
-
--Presentation video (stage 9): https://www.loom.com/share/edc717e1b8a84bd284fa49d1bea27c8a
-
-
+-Deployment link: https://github.io./luciano1127/se_project_spots
